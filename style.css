@@ -1,0 +1,454 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+body {
+  line-height: 1;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  position: relative;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.upper,
+.images {
+  position: relative;
+  width: 100%;
+}
+
+.upper::before,
+.images::before {
+  background-color: #660000;
+  background-image: url(images/gray-floral.png);
+  background-repeat: repeat;
+  background-size: 111px 111px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.images {
+  min-height: calc(500px + 2.5rem);
+}
+
+.images .container {
+  min-height: calc(500px + 2.5rem);
+  position: relative;
+}
+
+.lower {
+  background-color: #ccc;
+  background-image: url(images/soft-wallpaper.png);
+  background-repeat: repeat;
+  background-size: 333px 333px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.heading {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  z-index: 10;
+}
+
+.heading--h1 {
+  animation: heading 2s forwards;
+  color: #fafaff;
+  font-size: 7rem;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 8px 10px rgba(0, 0, 0, 0.09);
+}
+
+.img-levon,
+.img-pudding,
+.img-barry {
+  /* box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.09); */
+  position: absolute;
+  top: calc(100% - 500px);
+}
+
+.img-levon {
+  animation: levon 2s forwards;
+  left: 210px;
+  z-index: 2;
+}
+
+.img-pudding {
+  animation: pudding 2s forwards;
+  left: 50%;
+  top: calc(100% - 200px);
+  transform: translateX(-50%) scale(0);
+}
+
+.img-barry {
+  animation: barry 2s forwards;
+  right: 190px;
+  z-index: 2;
+}
+
+.transcript-container {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 15rem 0 10rem;
+}
+
+.transcript {
+  display: grid;
+  gap: 100px;
+  grid-template-columns: max-content;
+}
+
+.transcript dt {
+  font-weight: bold;
+}
+
+.transcript dd {
+  display: flex;
+  margin: 0;
+  grid-column-start: 2;
+}
+
+.is-barry,
+.is-levon {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+dd {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.is-levon + dd {
+  position: relative;
+  transform: translateX(-100px);
+}
+
+.is-barry + dd {
+  margin-left: auto;
+  position: relative;
+  text-align: right;
+}
+
+.is-barry + dd::after,
+.is-levon + dd::before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 4px solid #fafaff;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  transform: translateY(-50%);
+  top: 50%;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.09);
+}
+
+.is-barry + dd::after {
+  background-image: url(images/barry.head.png);
+  left: calc(100% + 1rem);
+}
+
+.is-levon + dd::before {
+  background-image: url(images/levon.head.png);
+  right: calc(100% + 1rem);
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  height: 90vh;
+  width: 33%;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgb(0 0 0 / 50%),
+      #13002380 1px,
+      #0000 1px 2px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgb(41 0 74 / 50%),
+      rgb(44 0 79 / 50%) 1px,
+      #0000 1px 2px
+    );
+  border-radius: 6px 0 100% 6px;
+  box-shadow: rgba(0, 0, 0, 0.06) 1vmin 1vmin 2vmin;
+}
+
+.curtain::before,
+.curtain::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 90vh;
+  border-radius: 6px 0 100% 6px;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgb(0 0 0 / 50%),
+      #13002380 2px,
+      #0000 2px 3px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgb(41 0 74 / 50%),
+      rgb(44 0 79 / 50%) 2px,
+      #0000 2px 3px
+    );
+}
+
+.curtain::before {
+  left: 0;
+  width: 80%;
+}
+
+.curtain::after {
+  left: 0;
+  width: 60%;
+}
+
+.curtain.left {
+  left: -1vmin;
+}
+
+.curtain.right {
+  right: -1vmin;
+  transform: scaleX(-1);
+}
+
+.video-container {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.video-container::before {
+  background-color: #660000;
+  background-image: url(images/gray-floral.png);
+  background-repeat: repeat;
+  background-size: 111px 111px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.footer {
+  background-color: #ccc;
+  text-align: center;
+}
+
+.footer a {
+  color: #660000;
+  cursor: pointer;
+}
+
+.footer a:hover {
+  color: purple;
+}
+
+@keyframes heading {
+  from {
+    transform: translateY(-100%) scale(0);
+  }
+
+  to {
+    transform: translateY(2rem) scale(1);
+  }
+}
+
+@keyframes pudding {
+  from {
+    transform: translateX(-50%) scale(0);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes levon {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 210px;
+  }
+}
+
+@keyframes barry {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 190px;
+  }
+}
